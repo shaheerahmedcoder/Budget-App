@@ -1,0 +1,503 @@
+:root {
+  --primary-bg: #FFD5E5; /* Light Pink/Peach */
+  --light-container: #FFFFDD; /* Very Light Yellow/Cream for card backgrounds */
+  --dark-text: #000000;    /* Black for most text (good contrast) */
+  --main-accent: #81F5FF; /* Sky Blue for primary buttons/highlights */
+  --secondary-accent: #A0FFE6; /* Light Teal/Aqua for hover, secondary actions, and some elements */
+
+  /* Feedback colors - adjusted to fit the new palette */
+  --feedback-success-bg: #81F5FF; /* Sky Blue for success feedback background (main accent) */
+  --feedback-success-text: #000000; /* Dark text for contrast on success background */
+  --feedback-error-bg: #FF6B6B; /* A friendly, desaturated red for error feedback background */
+  --feedback-error-text: #000000; /* Dark text for contrast on error background */
+
+
+  --shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius: 0.75rem;
+  --transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default for general text */
+  background-color: var(--primary-bg);
+  color: var(--dark-text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: var(--light-container) !important; /* Override Bootstrap default */
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    border-radius: var(--radius) var(--radius) 0 0; /* Only top corners rounded */
+    border-bottom: 1px solid var(--dark-text); /* Added a subtle border for definition */
+}
+
+.navbar-brand {
+    font-size: 1.8rem; /* Slightly larger for Courgette */
+    color: var(--dark-text) !important;
+    font-family: 'Courgette', cursive; /* Apply Courgette here */
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: var(--dark-text) !important;
+    font-family: 'Courgette', cursive; /* Apply Courgette here */
+    font-size: 1.1rem; /* Adjust size for readability with Courgette */
+}
+
+.nav-link:hover {
+    color: var(--main-accent) !important;
+}
+
+.navbar-toggler-icon {
+    /* Adjusting SVG stroke for the new black color */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280, 0, 0%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+
+/* Hero Section for the Landing Page */
+.hero-section {
+  text-align: center;
+  padding: 100px 0;
+  background-color: var(--light-container);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--dark-text); /* Added border */
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  font-family: 'Courgette', cursive; /* Apply Courgette to hero title */
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: var(--dark-text);
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-section .btn-tracker {
+  background-color: var(--main-accent);
+  color: var(--dark-text); /* Dark text on main accent button for better contrast */
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.hero-section .btn-tracker:hover {
+  background-color: var(--secondary-accent);
+  color: var(--dark-text); /* Dark text on lighter hover button */
+}
+
+/* Budget App Content - Initially Hidden */
+.budget-app-content {
+  display: none; /* Controlled by JavaScript */
+}
+
+/* Guide Section - Initially Hidden */
+.guide-section {
+  background-color: var(--light-container);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin-top: 2rem;
+  display: none; /* Controlled by JavaScript */
+  border: 1px solid var(--dark-text); /* Added border */
+}
+
+.guide-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dark-text);
+  font-size: 2rem;
+  font-family: 'Courgette', cursive; /* Apply Courgette to guide section titles */
+}
+
+.guide-section h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-text);
+    font-family: 'Courgette', cursive; /* Apply Courgette to guide section subtitles */
+}
+
+.guide-section p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: var(--dark-text);
+}
+
+.guide-section ul {
+  list-style-type: disc;
+  margin-left: 25px;
+  margin-bottom: 1.5rem;
+}
+
+.guide-section ul li {
+  margin-bottom: 0.5rem;
+  color: var(--dark-text);
+}
+
+
+/* Budget Form and Expense Form styles */
+.budget-form,
+.expense-form {
+  background-color: var(--light-container);
+  border: 1px solid var(--dark-text); /* Added border */
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--dark-text); /* Dark border for inputs */
+  border-radius: var(--radius);
+  transition: var(--transition);
+  box-sizing: border-box;
+  background-color: var(--primary-bg); /* Match body background */
+  color: var(--dark-text);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: var(--main-accent);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(129, 245, 255, 0.25); /* Focus glow with accent color */
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+  color: var(--dark-text); /* Dark text on buttons for better contrast */
+}
+
+.budget-submit {
+  background-color: var(--main-accent); /* Use main accent for primary action */
+}
+
+.budget-submit:hover {
+  background-color: var(--secondary-accent);
+  color: var(--dark-text); /* Dark text on lighter hover button */
+}
+
+.expense-submit {
+  background-color: var(--secondary-accent); /* Use secondary accent for secondary action */
+}
+
+.expense-submit:hover {
+  background-color: var(--main-accent);
+  color: var(--dark-text); /* Dark text on darker hover button */
+}
+
+.budget-feedback,
+.expense-feedback {
+  /* No background or text color set here; it will be handled by .alert-success/.alert-danger */
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  display: none; /* Hidden by default */
+  font-weight: bold;
+}
+
+.budget-feedback.showItem,
+.expense-feedback.showItem {
+  display: block; /* Shown when 'showItem' class is added */
+}
+
+/* Bootstrap alert classes for feedback */
+.alert-success {
+    background-color: var(--feedback-success-bg);
+    color: var(--feedback-success-text);
+    border-color: var(--feedback-success-bg); /* Optional: match border to background */
+}
+
+.alert-danger {
+    background-color: var(--feedback-error-bg);
+    color: var(--feedback-error-text);
+    border-color: var(--feedback-error-bg); /* Optional: match border to background */
+}
+
+
+/* Adjusted: Added display: flex and gap for alignment of $ sign and value */
+#balance, #budget, #expense {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  color: var(--dark-text); /* Default color for amounts */
+}
+
+#balance span, #budget span, #expense span {
+    margin-right: 0.2rem; /* Reduced gap */
+}
+
+
+.showGreen {
+  color: var(--main-accent); /* Use main accent for positive balance */
+}
+
+.showRed {
+  color: var(--feedback-error-bg); /* Use error color for negative balance */
+}
+
+.showBlack {
+  color: var(--dark-text);
+}
+
+.expense-list {
+  margin-top: 2rem;
+}
+
+.expense {
+  background: var(--light-container); /* Use light container for individual expense items */
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--dark-text); /* Added border for definition */
+}
+
+.expense-title,
+.expense-amount {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--dark-text);
+}
+
+.expense-amount {
+  color: var(--secondary-accent); /* Expense amount in lighter accent color */
+}
+
+.expense-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-icon,
+.delete-icon {
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.edit-icon {
+  color: var(--main-accent); /* Edit icon in main accent */
+}
+
+.edit-icon:hover {
+  color: var(--secondary-accent);
+}
+
+.delete-icon {
+  color: var(--secondary-accent); /* Delete icon in secondary accent */
+}
+
+.delete-icon:hover {
+  color: var(--main-accent);
+}
+
+/* Added styles for expense list headers to align them */
+.expense-list__info {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    margin-bottom: 1rem; /* Add some space below the header */
+    color: var(--dark-text);
+}
+
+.expense-list__info .list-item {
+    flex: 1; /* Distribute space equally */
+    text-align: center; /* Center the text */
+}
+
+.expense-list__info .list-item:nth-child(1) {
+    text-align: left; /* Align first item to the left (expense title) */
+    flex: 2; /* Give more space to the title */
+}
+
+.expense-list__info .list-item:nth-child(2) {
+    text-align: right; /* Align second item to the right (expense value) */
+    flex: 1;
+}
+
+.expense-list__info .list-item:nth-child(3) {
+    flex: 0.5; /* Smaller space for icons */
+}
+
+/* Styles for single expense items */
+.expense .expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%; /* Ensure it takes full width of its parent */
+}
+
+.expense .expense-title {
+    flex: 2; /* Match the header's flex for alignment */
+    text-align: left;
+}
+
+.expense .expense-amount {
+    flex: 1; /* Match the header's flex for alignment */
+    text-align: right;
+    margin-left: auto; /* Push to the right */
+    padding-right: 1rem; /* Add some padding to separate from icons */
+}
+
+.expense .expense-icons {
+    flex: 0.5; /* Match the header's flex for alignment */
+    justify-content: flex-end; /* Align icons to the right */
+}
+
+/* Contact Form Specific Styles */
+.contact-form-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    background: var(--light-container);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 1px solid var(--dark-text); /* Added border */
+}
+
+.contact-form-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-text);
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Courgette', cursive; /* Apply Courgette to contact title */
+}
+
+.contact-form-container p {
+    font-size: 1rem;
+    color: var(--dark-text);
+    margin-bottom: 2rem;
+}
+
+#contact-form .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+#contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--dark-text); /* Dark border for inputs */
+    border-radius: var(--radius);
+    transition: var(--transition);
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: var(--primary-bg); /* Match body background */
+    color: var(--dark-text);
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    border-color: var(--main-accent);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(129, 245, 255, 0.25); /* Focus glow with accent color */
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-submit {
+    background-color: var(--main-accent);
+    color: var(--dark-text);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.contact-submit:hover {
+  background-color: var(--secondary-accent);
+  color: var(--dark-text);
+}
+
+#contact-feedback {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-weight: bold;
+    text-align: center;
+}
+
+#contact-feedback.alert-success {
+    background-color: var(--feedback-success-bg);
+    color: var(--feedback-success-text);
+}
+
+#contact-feedback.alert-danger {
+    background-color: var(--feedback-error-bg);
+    color: var(--feedback-error-text);
+}
+
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  .expense-title, .expense-amount {
+    font-size: 1.2rem;
+  }
+
+  .hero-section h1 {
+      font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #balance {
+    font-size: 2.2rem;
+  }
+
+  .hero-section h1 {
+      font-size: 4rem;
+  }
+}

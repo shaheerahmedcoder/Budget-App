@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/all.css">
+  <title>Budget App</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-11 mx-auto pt-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-top shadow-sm mb-4">
+          <a class="navbar-brand text-uppercase font-weight-bold" href="index.html">Budget App</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="guide-link">Guide</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="hero-section" id="hero-section">
+          <h1>Welcome to Budget App</h1>
+          <p>Your ultimate tool for managing personal finances. Track your income, expenses, and see where your money goes.</p>
+          <a href="#" class="btn btn-tracker" id="use-tracker-btn">USE EXPENSE TRACKER</a>
+        </div>
+
+        <div class="budget-app-content" id="budget-app-content">
+          <h3 class="text-uppercase mb-4"></h3>
+          <div class="row">
+            <div class="col-md-5 my-3">
+              <div class="budget-feedback alert alert-danger text-capitalize">budget feedback</div>
+              <form id="budget-form" class=" budget-form">
+                <h5 class="text-capitalize">please enter your budget</h5>
+                <div class="form-group">
+                  <input type="number" class="form-control budget-input" id="budget-input">
+                </div>
+                <button type="submit" class="btn text-capitalize budget-submit" id="budget-submit">calculate</button>
+              </form>
+            </div>
+            <div class="col-md-7">
+              <div class="row my-3">
+                <div class="col-4 text-center mb-2">
+                  <h6 class="text-uppercase info-title">budget</h6>
+                  <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></span>
+                  <h4 class="text-uppercase mt-2 budget" id="budget"><span>$</span><span id="budget-amount">0</span></h4>
+                </div>
+                <div class="col-4 text-center">
+                  <h6 class="text-uppercase info-title">expenses</h6>
+                  <span class="expense-icon"><i class="far fa-credit-card"></i></span>
+                  <h4 class="text-uppercase mt-2 expense" id="expense"><span>$</span><span id="expense-amount">0</span></h4>
+                </div>
+                <div class="col-4 text-center">
+                  <h6 class="text-uppercase info-title">balance</h6>
+                  <span class="balance-icon"><i class="fas fa-dollar-sign"></i></span>
+                  <h4 class="text-uppercase mt-2 balance" id="balance"> <span>$</span><span id="balance-amount">0</span></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 my-3">
+              <div class="expense-feedback alert alert-danger text-capitalize">expense feedback</div>
+              <form id="expense-form" class=" expense-form">
+                <h5 class="text-capitalize">please enter expense title</h5>
+                <div class="form-group">
+                  <input type="text" class="form-control expense-input" id="expense-input">
+                </div>
+                <h5 class="text-capitalize">please enter expense amount</h5>
+                <div class="form-group">
+                  <input type="number" class="form-control expense-input" id="amount-input">
+                </div>
+                <button type="submit" class="btn text-capitalize expense-submit" id="expense-submit">add expense</button>
+              </form>
+            </div>
+            <div class="col-md-7 my-3">
+              <div class="expense-list" id="expense-list">
+
+                <div class="expense-list__info d-flex justify-content-between text-capitalize">
+                  <h5 class="list-item">expense title</h5>
+                  <h5 class="list-item">expense value</h5>
+                  <h5 class="list-item"></h5>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-section" id="guide-section">
+          <h2>Guide to Controlling Your Expenses</h2>
+          <p>Controlling your expenses is a crucial step towards financial stability and achieving your financial goals. Here’s a simple guide to help you get started with the Budget App:</p>
+          <h3>1. Set a Budget:</h3>
+          <ul>
+            <li>Start by understanding your income. How much money do you have coming in each month?</li>
+            <li>Categorize your spending: Housing, Food, Transportation, Utilities, Entertainment, Savings, etc.</li>
+            <li>Allocate a specific amount for each category based on your income and financial goals. Be realistic!</li>
+          </ul>
+          <h3>2. Track Every Expense:</h3>
+          <ul>
+            <li>This is where the Budget App comes in handy! Every time you spend money, no matter how small the amount, record it in the app.</li>
+            <li>Be consistent. Skipping even small purchases can throw off your budget.</li>
+            <li>Use the "Expense Title" to describe what you spent money on (e.g., "Groceries," "Coffee," "Gas").</li>
+            <li>Use the "Expense Amount" to enter the exact cost.</li>
+          </ul>
+          <h3>3. Review and Analyze:</h3>
+          <ul>
+            <li>Regularly check your "Expenses" and "Balance" in the app.</li>
+            <li>See which categories you are spending the most on. Are there areas where you can cut back?</li>
+            <li>Compare your actual spending with your budget. Are you staying within your limits?</li>
+          </ul>
+          <h3>4. Adjust as Needed:</h3>
+          <ul>
+            <li>Life happens! Your budget isn't set in stone. If you find certain categories are consistently over or under budget, adjust them.</li>
+            <li>The goal is to create a budget that works for *you*.</li>
+          </ul>
+          <h3>5. Set Financial Goals:</h3>
+          <ul>
+            <li>Are you saving for a down payment, a vacation, or just building an emergency fund?</li>
+            <li>Having clear goals will motivate you to stick to your budget and control your expenses more effectively.</li>
+            </ul>
+          <p>By diligently using this budget tracker and following these steps, you'll gain greater control over your finances and be well on your way to achieving your financial aspirations!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const useTrackerBtn = document.getElementById('use-tracker-btn');
+      const heroSection = document.getElementById('hero-section');
+      const budgetAppContent = document.getElementById('budget-app-content');
+      const guideLink = document.getElementById('guide-link');
+      const guideSection = document.getElementById('guide-section');
+
+      // --- Budget App Specific Elements ---
+      const budgetInput = document.getElementById('budget-input');
+      const budgetAmount = document.getElementById('budget-amount');
+      const expenseAmount = document.getElementById('expense-amount');
+      const balanceAmount = document.getElementById('balance-amount');
+      const expenseList = document.getElementById('expense-list');
+      const balance = document.getElementById('balance');
+      const expenseInput = document.getElementById('expense-input');
+      const amountInput = document.getElementById('amount-input');
+      const budgetFeedback = document.querySelector('.budget-feedback');
+      const expenseFeedback = document.querySelector('.expense-feedback');
+      // --- End Budget App Specific Elements ---
+
+      // --- Budget App Data ---
+      let budgetValue = 0; // This will hold the user's set budget
+      let expenses = []; // This array will hold all expense objects
+
+      // Function to update the budget UI elements (expenses and balance are derived)
+      function updateBudgetUI() {
+        // Always display the current budgetValue
+        budgetAmount.textContent = budgetValue;
+
+        const totalExpenses = expenses.reduce((acc, item) => acc + item.amount, 0);
+        expenseAmount.textContent = totalExpenses;
+
+        const currentBalance = budgetValue - totalExpenses;
+        balanceAmount.textContent = currentBalance;
+
+        // Update balance color based on value
+        if (currentBalance < 0) {
+          balance.classList.remove('showGreen', 'showBlack');
+          balance.classList.add('showRed');
+        } else if (currentBalance > 0) {
+          balance.classList.remove('showRed', 'showBlack');
+          balance.classList.add('showGreen');
+        } else {
+          balance.classList.remove('showRed', 'showGreen');
+          balance.classList.add('showBlack');
+        }
+
+        // Clear existing expense list items (keeping header)
+        while (expenseList.children.length > 1) {
+            expenseList.removeChild(expenseList.lastChild);
+        }
+
+        // Render current expenses from the 'expenses' array
+        expenses.forEach(item => {
+            const expenseDiv = document.createElement('div');
+            expenseDiv.classList.add('expense');
+            expenseDiv.setAttribute('data-id', item.id); // Set data-id on the parent div for easier removal
+            expenseDiv.innerHTML = `
+                <div class="expense-item d-flex justify-content-between align-items-baseline">
+                    <h6 class="expense-title mb-0 text-uppercase list-item">- ${item.title}</h6>
+                    <h5 class="expense-amount mb-0 list-item">$${item.amount}</h5>
+                    <div class="expense-icons list-item">
+                        <a href="#" class="edit-icon mx-2" data-id="${item.id}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="#" class="delete-icon" data-id="${item.id}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+            expenseList.appendChild(expenseDiv);
+        });
+      }
+
+      // Function to reset the budget app UI and data
+      function resetBudgetApp() {
+        budgetValue = 0; // Reset budget value to 0
+        expenses = []; // Clear all expenses
+        // balanceValue is derived, no need to explicitly reset
+
+        budgetInput.value = '';
+        expenseInput.value = '';
+        amountInput.value = '';
+
+        // Update UI displays to zero
+        budgetAmount.textContent = '0';
+        expenseAmount.textContent = '0';
+        balanceAmount.textContent = '0';
+
+        balance.classList.remove('showRed', 'showGreen');
+        balance.classList.add('showBlack'); // Reset balance text color
+
+        // Clear all expense items except the header
+        while (expenseList.children.length > 1) { // Keep the header row
+            expenseList.removeChild(expenseList.lastChild);
+        }
+
+        // Hide any feedback messages
+        budgetFeedback.classList.remove('showItem');
+        expenseFeedback.classList.remove('showItem');
+      }
+
+      // Function to show budget feedback
+      function showBudgetFeedback(message, type) {
+        budgetFeedback.textContent = message;
+        budgetFeedback.className = `budget-feedback alert alert-${type} text-capitalize showItem`;
+        setTimeout(() => {
+          budgetFeedback.classList.remove('showItem');
+          // Reset to default class when hidden for next time
+          budgetFeedback.className = 'budget-feedback alert alert-danger text-capitalize';
+        }, 3000);
+      }
+
+      // Function to show expense feedback
+      function showExpenseFeedback(message, type) {
+        expenseFeedback.textContent = message;
+        expenseFeedback.className = `expense-feedback alert alert-${type} text-capitalize showItem`;
+        setTimeout(() => {
+          expenseFeedback.classList.remove('showItem');
+          expenseFeedback.className = 'expense-feedback alert alert-danger text-capitalize';
+        }, 3000);
+      }
+
+
+      // Function to show the budget app and hide other sections
+      function showBudgetApp() {
+        heroSection.style.display = 'none';
+        guideSection.style.display = 'none';
+        budgetAppContent.style.display = 'block'; // Show the budget app content
+        resetBudgetApp(); // Reset the app state ONLY when intentionally navigating to it
+      }
+
+      // Function to show the guide and hide other sections
+      function showGuide() {
+        heroSection.style.display = 'none';
+        budgetAppContent.style.display = 'none';
+        guideSection.style.display = 'block'; // Show the guide content
+      }
+
+      // Event listener for "USE EXPENSE TRACKER" button
+      useTrackerBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        showBudgetApp();
+      });
+
+      // Event listener for "Guide" link in navbar
+      guideLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        showGuide();
+      });
+
+      // Initial state check on DOMContentLoaded
+      const hash = window.location.hash;
+      if (hash === '#guide-section') {
+        showGuide();
+      } else {
+        // Default to hero section on initial load or non-guide navigation
+        heroSection.style.display = 'block';
+        budgetAppContent.style.display = 'none';
+        guideSection.style.display = 'none';
+      }
+
+      // --- Budget App Functionality Event Listeners ---
+    //   document.getElementById('budget-form').addEventListener('submit', function(event) {
+    //     event.preventDefault();
+    //     const value = parseFloat(budgetInput.value);
+    //     if (value < 0 || isNaN(value)) {
+    //       showBudgetFeedback('Budget value cannot be empty or negative.', 'danger');
+    //     } else {
+    //       budgetValue = value; // Set the budget value
+    //       updateBudgetUI(); // Update UI with the new budget
+    //       budgetInput.value = '';
+    //       showBudgetFeedback('Budget value set successfully!', 'success');
+    //     }
+    //   });
+
+    //   document.getElementById('expense-form').addEventListener('submit', function(event) {
+    //     event.preventDefault();
+    //     const title = expenseInput.value.trim();
+    //     const amount = parseFloat(amountInput.value);
+
+    //     if (title === '' || amount < 0 || isNaN(amount)) {
+    //       showExpenseFeedback('Expense title cannot be empty and amount cannot be negative.', 'danger');
+    //     } else {
+    //       const expenseItem = {
+    //         id: Date.now(), // Unique ID
+    //         title: title,
+    //         amount: amount
+    //       };
+    //       expenses.push(expenseItem);
+    //       updateBudgetUI(); // Recalculate and render with new expense
+    //       expenseInput.value = '';
+    //       amountInput.value = '';
+    //       showExpenseFeedback('Expense added successfully!', 'success');
+    //     }
+    //   });
+
+      // Event delegation for edit/delete
+      expenseList.addEventListener('click', function(event) {
+        // Find the closest parent 'expense' div to get its data-id
+        let targetElement = event.target;
+        let expenseDiv = null;
+
+        // Use .closest() for a more robust solution
+        expenseDiv = targetElement.closest('.expense');
+
+        if (expenseDiv) {
+            const idToProcess = parseFloat(expenseDiv.dataset.id);
+
+            // if (event.target.classList.contains('delete-icon') || event.target.parentElement.classList.contains('delete-icon')) {
+            //     expenses = expenses.filter(item => item.id !== idToProcess);
+            //     updateBudgetUI(); // Recalculate and re-render after deletion
+            //     showExpenseFeedback('Expense deleted successfully!', 'success');
+            // }
+            // Edit functionality (more complex: pre-populate form, remove original, re-add/update)
+            // if (event.target.classList.contains('edit-icon') || event.target.parentElement.classList.contains('edit-icon')) {
+            //     const itemToEdit = expenses.find(item => item.id === idToProcess);
+            //     if (itemToEdit) {
+            //         expenseInput.value = itemToEdit.title;
+            //         amountInput.value = itemToEdit.amount;
+            //         expenses = expenses.filter(item => item.id !== idToProcess); // Remove from list for re-addition/update
+            //         updateBudgetUI(); // Update UI after temporary removal (before re-adding)
+            //         showExpenseFeedback('Edit expense and click Add Expense!', 'info');
+            //     }
+            // }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
