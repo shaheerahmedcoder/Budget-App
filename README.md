@@ -20,8 +20,3 @@ Deployed here: [budget-app-chi-gray.vercel.app](https://budget-app-chi-gray.verc
 - **Frontend:** HTML , CSS and JS 
 - **Deployment:** Vercel  
 
----
-
-
-## 📂 Project Structure
-
